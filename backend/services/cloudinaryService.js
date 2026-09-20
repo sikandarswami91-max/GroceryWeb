@@ -1,11 +1,18 @@
+import dotenv from 'dotenv';
 import { v2 as cloudinary } from 'cloudinary';
+
+// Ensure environment variables are loaded before this module is evaluated.
+// ESM import hoisting means route modules (and this service) can be evaluated
+// BEFORE app.js's dotenv.config() call, so we load here defensively.
+// Idempotent: dotenv.config() is a no-op for already-set variables.
+dotenv.config({ quiet: true });
 
 // Configure Cloudinary
 const isCloudinaryConfigured = () => {
   return (
-    process.env.CLOUDINARY_CLOUD_NAME &&
-    process.env.CLOUDINARY_API_KEY &&
-    process.env.CLOUDINARY_API_SECRET
+    Boolean(process.env.CLOUDINARY_CLOUD_NAME) &&
+    Boolean(process.env.CLOUDINARY_API_KEY) &&
+    Boolean(process.env.CLOUDINARY_API_SECRET)
   );
 };
 
