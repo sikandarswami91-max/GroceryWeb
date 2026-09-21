@@ -100,13 +100,13 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-xs">
       {/* 1. Top Announcement Bar */}
       <div className="bg-emerald-900 text-emerald-100 text-xs py-1.5 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="flex h-2 w-2 relative">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 min-w-0">
+          <div className="flex items-center gap-2 flex-1 min-w-0">
+            <span className="flex h-2 w-2 relative shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
             </span>
-            <span className="font-medium truncate">
+            <span className="font-medium truncate min-w-0">
               ⚡ 15-30 Minute Express Delivery | Fresh Grocery Marketplace | Cash on Delivery Available
             </span>
           </div>
@@ -136,11 +136,11 @@ export default function Navbar() {
             <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white shadow-md shadow-emerald-600/20 group-hover:bg-emerald-700 transition-colors">
               <ShoppingBasket className="w-6 h-6" />
             </div>
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-2xl font-black tracking-tight text-slate-900 leading-none">
+            <div className="flex flex-col min-w-0">
+              <span className="text-base sm:text-2xl font-black tracking-tight text-slate-900 leading-none">
                 Mega<span className="text-emerald-600">Basket</span>
               </span>
-              <span className="text-[10px] font-bold text-slate-700 tracking-wider uppercase mt-0.5">
+              <span className="hidden sm:block text-[10px] font-bold text-slate-700 tracking-wider uppercase mt-0.5">
                 Online Supermarket
               </span>
             </div>
@@ -399,7 +399,7 @@ export default function Navbar() {
                 )}
               </div>
             ) : (
-              <div className="flex items-center">
+              <div className="hidden sm:flex items-center">
                 <Link
                   to="/login"
                   id="nav-login-btn"
@@ -583,6 +583,16 @@ export default function Navbar() {
           </div>
 
           <div className="pt-2 border-t border-slate-100 flex flex-col space-y-1 text-xs font-medium text-slate-700">
+            {!isAuthenticated && (
+              <Link
+                to="/login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-3 py-2 rounded-lg bg-emerald-50 text-emerald-800 font-bold flex items-center justify-between"
+              >
+                <span>Sign In / Register</span>
+                <User className="w-4 h-4 text-emerald-600" />
+              </Link>
+            )}
             <Link
               to="/orders"
               onClick={() => setMobileMenuOpen(false)}

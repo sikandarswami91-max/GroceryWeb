@@ -169,7 +169,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="space-y-12 sm:space-y-16 pb-16 overflow-x-hidden">
+    <div className="space-y-12 sm:space-y-16 pb-16">
       {/* ==================================================
           2. HERO SECTION REDESIGN
           - Bright, fresh, premium light background (no dark green)
