@@ -7,3 +7,5 @@ coverage/
 bun.lock*
 .env*
 !.env.example
+# Safe to commit: contains only the public production API URL (no secrets)
+!frontend/.env.production
