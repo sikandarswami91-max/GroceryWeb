@@ -9,6 +9,9 @@
    ============================================================ */
 html,
 body {
+  /* Fallback for older mobile browsers that don't support `clip` */
+  overflow-x: hidden;
+  /* `clip` is preferred: no scroll container, `position: sticky` keeps working */
   overflow-x: clip;
   /* Prevent long words / SKUs / URLs from pushing layout wider */
   overflow-wrap: break-word;

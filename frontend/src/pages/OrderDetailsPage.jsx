@@ -261,7 +261,7 @@ export default function OrderDetailsPage() {
         <div className="divide-y divide-slate-100">
           {order.items.map((item, idx) => (
             <div key={idx} className="py-3 flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 min-w-0">
                 <img
                   src={item.image || 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=150&q=80'}
                   alt={item.name}

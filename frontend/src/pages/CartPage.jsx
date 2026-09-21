@@ -72,10 +72,10 @@ export default function CartPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between pb-4 border-b border-slate-200">
-        <div>
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200">
+        <div className="min-w-0">
           <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
-            <ShoppingBag className="w-7 h-7 text-emerald-600" />
+            <ShoppingBag className="w-7 h-7 text-emerald-600 shrink-0" />
             <span>Shopping Basket ({totalItems})</span>
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
