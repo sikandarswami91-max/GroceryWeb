@@ -137,7 +137,7 @@ export default function Navbar() {
               <ShoppingBasket className="w-6 h-6" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 leading-none">
+              <span className="text-lg sm:text-2xl font-black tracking-tight text-slate-900 leading-none">
                 Mega<span className="text-emerald-600">Basket</span>
               </span>
               <span className="text-[10px] font-bold text-slate-700 tracking-wider uppercase mt-0.5">
@@ -264,12 +264,12 @@ export default function Navbar() {
           </form>
 
           {/* Right Action Icons: Wishlist, Cart, Account */}
-          <div className="flex items-center gap-1 sm:gap-2.5 shrink-0">
+          <div className="flex items-center gap-0.5 sm:gap-2.5 shrink-0">
             {/* Wishlist Link */}
             <Link
               to="/wishlist"
               id="nav-wishlist-btn"
-              className="relative p-2.5 text-slate-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-full transition-colors flex items-center justify-center"
+              className="relative p-1.5 sm:p-2.5 text-slate-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-full transition-colors flex items-center justify-center"
               title="My Wishlist"
             >
               <Heart className="w-5 h-5" />
@@ -287,7 +287,7 @@ export default function Navbar() {
             <Link
               to="/cart"
               id="nav-cart-btn"
-              className="relative flex items-center gap-2.5 px-3 py-2 text-slate-800 hover:text-emerald-700 bg-emerald-50/90 hover:bg-emerald-100 border border-emerald-200/80 rounded-full transition-all shadow-2xs"
+              className="relative flex items-center gap-1 sm:gap-2.5 px-2 py-1.5 sm:px-3 sm:py-2 text-slate-800 hover:text-emerald-700 bg-emerald-50/90 hover:bg-emerald-100 border border-emerald-200/80 rounded-full transition-all shadow-2xs"
               title="Shopping Cart"
             >
               <div className="relative">
@@ -318,7 +318,7 @@ export default function Navbar() {
                   type="button"
                   id="nav-user-menu-btn"
                   onClick={() => setUserDropdownOpen((prev) => !prev)}
-                  className="flex items-center gap-2 p-1.5 sm:px-3 sm:py-1.5 rounded-full hover:bg-slate-100 border border-slate-200 transition-colors text-slate-800 focus:outline-none cursor-pointer"
+                  className="flex items-center gap-2 p-1 sm:px-3 sm:py-1.5 rounded-full hover:bg-slate-100 border border-slate-200 transition-colors text-slate-800 focus:outline-none cursor-pointer"
                 >
                   <div className="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">
                     {user?.name ? user.name.charAt(0).toUpperCase() : 'U'}
@@ -416,7 +416,7 @@ export default function Navbar() {
               type="button"
               id="nav-mobile-toggle"
               onClick={() => setMobileMenuOpen((prev) => !prev)}
-              className="p-2 text-slate-600 hover:text-slate-900 md:hidden focus:outline-none"
+              className="p-1.5 sm:p-2 text-slate-600 hover:text-slate-900 md:hidden focus:outline-none"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -522,9 +522,9 @@ export default function Navbar() {
         </form>
 
         {/* Mobile Location Notice */}
-        <div className="flex items-center justify-between pt-2 text-[11px] text-slate-600">
-          <div className="flex items-center gap-1 font-medium">
-            <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
+                <div className="flex items-center gap-1 font-medium min-w-0">
+                  <MapPin className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
             <span>Delivering to {selectedLocation.city} ({selectedLocation.pincode})</span>
           </div>
           <span className="text-emerald-700 font-bold">15-30 Mins</span>

@@ -97,7 +97,7 @@ export default function AdminLayout() {
       <aside
         className={`fixed lg:sticky top-0 left-0 z-50 h-screen bg-white border-r border-slate-200 flex flex-col shrink-0 transition-all duration-300 ease-in-out w-64 ${
           collapsed ? 'lg:w-[76px]' : 'lg:w-64'
-        } ${sidebarOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full lg:translate-x-0'}`}
+        } ${sidebarOpen ? 'translate-x-0 shadow-2xl admin-fade-in' : 'max-lg:hidden'}`}
       >
         <div className="flex flex-col h-full">
           {/* Brand */}

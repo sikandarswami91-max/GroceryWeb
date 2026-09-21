@@ -31,7 +31,7 @@ export const ToastProvider = ({ children }) => {
       {/* Toast Render Portal */}
       <div
         id="toast-container"
-        className="fixed bottom-5 right-5 z-50 flex flex-col space-y-3 pointer-events-none max-w-sm w-full"
+        className="fixed bottom-4 inset-x-4 sm:inset-x-auto sm:left-auto sm:right-5 sm:w-96 sm:max-w-sm z-50 flex flex-col space-y-3 pointer-events-none"
       >
         {toasts.map((toast) => {
           const isSuccess = toast.type === 'success';

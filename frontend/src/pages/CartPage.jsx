@@ -98,9 +98,9 @@ export default function CartPage() {
         <div className="lg:col-span-8 space-y-4">
           {/* Free shipping progress bar */}
           <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 space-y-2">
-            <div className="flex items-center justify-between text-xs font-semibold text-emerald-900">
-              <span className="flex items-center gap-1.5">
-                <Truck className="w-4 h-4 text-emerald-600" />
+            <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold text-emerald-900">
+              <span className="flex items-center gap-1.5 min-w-0">
+                <Truck className="w-4 h-4 text-emerald-600 shrink-0" />
                 {amountNeededForFreeShipping > 0 ? (
                   <span>
                     Add <strong className="text-emerald-700 font-bold">₹{amountNeededForFreeShipping}</strong> more for FREE Express Delivery
@@ -112,7 +112,7 @@ export default function CartPage() {
                   </span>
                 )}
               </span>
-              <span>₹{subtotal} / ₹{freeShippingThreshold}</span>
+              <span className="shrink-0">₹{subtotal} / ₹{freeShippingThreshold}</span>
             </div>
             <div className="w-full h-2 bg-emerald-200/60 rounded-full overflow-hidden">
               <div
@@ -142,7 +142,7 @@ export default function CartPage() {
                       alt={item.name}
                       className="w-18 h-18 sm:w-20 sm:h-20 rounded-xl object-cover bg-slate-100 shrink-0 border border-slate-100"
                     />
-                    <div className="space-y-1">
+                    <div className="space-y-1 min-w-0">
                       <Link
                         to={`/products/${prod.slug || prod._id}`}
                         className="text-sm font-bold text-slate-900 hover:text-emerald-700 transition-colors line-clamp-2"

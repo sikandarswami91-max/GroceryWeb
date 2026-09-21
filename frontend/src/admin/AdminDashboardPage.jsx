@@ -111,7 +111,7 @@ export default function AdminDashboardPage() {
               Live snapshot of grocery sales, order fulfilment and inventory health across MegaBasket.
             </p>
           </div>
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
             <Link
               to="/admin/products/new"
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-white text-emerald-700 rounded-xl text-xs font-bold hover:bg-emerald-50 transition-colors shadow-sm"
@@ -154,7 +154,7 @@ export default function AdminDashboardPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Order Status Distribution — real data from statusCounts */}
         <div className="lg:col-span-2 bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm admin-fade-up">
-          <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+          <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-100">
             <div>
               <h3 className="text-base font-bold text-slate-900">Order Status Distribution</h3>
               <p className="text-[11px] text-slate-500 mt-0.5">
@@ -249,7 +249,7 @@ export default function AdminDashboardPage() {
 
       {/* Recent Orders */}
       <div className="bg-white border border-slate-200/80 rounded-2xl shadow-sm overflow-hidden admin-fade-up">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+        <div className="flex flex-wrap items-center justify-between gap-3 px-4 sm:px-6 py-4 border-b border-slate-100">
           <div>
             <h3 className="text-base font-bold text-slate-900">Recent Orders</h3>
             <p className="text-[11px] text-slate-500 mt-0.5">Latest customer activity</p>
